@@ -176,6 +176,7 @@ export const prepareViewerData = (entries) => {
         index,
         status: entry.response.status,
         method: entry.request.method,
+        initiator: entry._initiator?.url || 'other',
         size: parseSize(entry.response),
         startedDateTime: new Date(entry.startedDateTime).getTime(),
         type: getContentType(entry),

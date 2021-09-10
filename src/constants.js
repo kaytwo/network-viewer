@@ -11,6 +11,10 @@ export const VIEWER_FIELDS = Object.freeze({
     key: 'method',
     name: 'Method',
   }),
+  initiator: Object.freeze({
+    key: 'initiator',
+    name: 'Initiator',
+  }),
   domain: Object.freeze({
     key: 'domain',
     name: 'Domain',
@@ -176,6 +180,10 @@ export const GENERAL_HEADERS = Object.freeze({
   status: Object.freeze({
     key: 'status',
     name: 'Status Code',
+  }),
+  initiator: Object.freeze({
+    key: 'initiator',
+    name: 'Initiator',
   }),
   serverIPAddress: Object.freeze({
     key: 'serverIPAddress',
