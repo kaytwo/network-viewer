@@ -7,6 +7,7 @@ import Styles from './NetworkTableHeader.styles.scss';
 import TimeChart from './TimeChart';
 import NetworkCellValue from './NetworkCellValue';
 import { getStatusClass } from '../../utils';
+import { useTheme } from '../../state/theme/Context';
 
 const context = classNames.bind(Styles);
 
@@ -17,6 +18,7 @@ const NetworkTableRow = ({
   showAllCols,
   onSelect,
 }) => {
+  const { showWaterfall } = useTheme();
   const handleSelectRequest = () => {
     onSelect(payload);
   };
@@ -52,14 +54,16 @@ const NetworkTableRow = ({
           unit={unit}
         />
       ))}
-      <td className={Styles['timeline-header']}>
-        {payload.time ? (
-          <TimeChart
-            maxTime={maxTime}
-            timings={payload.timings}
-          />
-        ) : ''}
-      </td>
+      {showWaterfall && (
+        <td className={Styles['timeline-header']}>
+          {payload.time ? (
+            <TimeChart
+              maxTime={maxTime}
+              timings={payload.timings}
+            />
+          ) : ''}
+        </td>
+      )}
     </tr>
   );
 };

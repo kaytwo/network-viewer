@@ -219,4 +219,5 @@ export const TIMELINE_DATA_POINT_HEIGHT = 2;
 export const NETWORK_VIEWER_DEFAULT_OPTIONS = {
   showImportHAR: true,
   showTimeline: false,
+  showWaterfall: true,
 };
